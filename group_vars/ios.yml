@@ -1,0 +1,6 @@
+cli:
+  host: "{{inventory_hostname}}"
+  username:  "{{TACACS-NET}}"
+  password:  "{{TACACS-NET}}"
+  transport: cli
+  
