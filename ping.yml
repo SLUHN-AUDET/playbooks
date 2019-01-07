@@ -1,8 +1,8 @@
 ---
 
 - name: check connectivity to 8.8.8.8
-  hosts: SLC-Network-Devices
-  
+  hosts: SLC
+    
   tasks:
     - ios_command: 
         commands: ping 8.8.8.8
