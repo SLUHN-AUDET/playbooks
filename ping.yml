@@ -1,7 +1,7 @@
 ---
 
 - name: check connectivity to 8.8.8.8
-  hosts: 10.112.32.120
+  hosts: ios_devices
     
   tasks:
     - ios_command: 
