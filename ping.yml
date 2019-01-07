@@ -1,7 +1,7 @@
 ---
 
 - name: check connectivity to 8.8.8.8
-  hosts: ios
+  hosts: SLC-Network-Devices
   
   tasks:
     - ios_command: 
