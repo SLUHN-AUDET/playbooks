@@ -6,12 +6,12 @@
   tasks:
     ios_command:
         ansible_connection: network_cli
+        ansible_network_os: ios
         ansible_become: yes
         ansible_become_method: enable
-        ansible_network_os: ios
         ansible_user: TACACS-NET
         ansible_ssh_pass: TACACS-NET        
-      commands: ping 8.8.8.8        
+        commands: ping 8.8.8.8        
         wait_for:
         - result[0] contains "!!!"
       register: result
