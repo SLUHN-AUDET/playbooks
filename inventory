@@ -1,5 +1,6 @@
 [ios_devices]
 10.112.32.120
+10.112.32.121
 
 [ios_devices:vars]
 ansible_connection=network_cli
