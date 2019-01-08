@@ -1,17 +1,8 @@
-
-[all:vars]
-# these defaults can be overridden for any group in the [group:vars] section
-ansible_connection=network_cli
-ansible_user=ansible
-
-[slc]
-10.112.32.120
-
-
 [ios_devices]
 10.112.32.120
 
 [ios_devices:vars]
+ansible_connection=network_cli
 ansible_become=yes
 ansible_become_method=enable
 ansible_network_os=ios
