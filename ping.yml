@@ -3,6 +3,7 @@
   hosts: ios_devices
     
   tasks:
+  - name: IOS command
     ios_command:
       commands: ping 8.8.8.8        
       wait_for:
