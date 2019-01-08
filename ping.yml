@@ -5,20 +5,15 @@
     
   tasks:
     - ios_command:
-    
-ansible_ssh_user = MY_USER
-ansible_ssh_pass = MY_SECRET_PASS
-ansible_connection = network_cli
-ansible_network_os = ios
-
-        ansible_connection: {{ ansible_connection }}
-        become: {{ ansible_become=yes }}
-ansible_become_method=enable
-ansible_network_os=ios
-ansible_user=TACACS-NET
-ansible_ssh_pass= TACACS-NET
+        ansible_connection = network_cli
+        ansible_become = yes
+        ansible_become_method = enable
+        ansible_network_os = ios
+        ansible_user = TACACS-NET
+        ansible_ssh_pass = TACACS-NET
+        
         commands: ping 8.8.8.8
-        provider: "{{cli}}"
+        
         wait_for:
         - result[0] contains "!!!"
       register: result
