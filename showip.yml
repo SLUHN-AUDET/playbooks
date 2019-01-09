@@ -1,0 +1,25 @@
+--- 
+#Playbook to run commands and save output 
+
+- hosts: all
+  gather_facts: false
+  
+  vars: 
+    command_list:
+      - show ip interface brief | exc admin | unass 
+
+  tasks:
+   - name: Run the Commands  
+     ios_command:
+       commands: "{{ command_list }}"
+     register: output
+
+   - name: Show the output on the screen
+     debug:
+       msg: "{{ output.stdout_lines[0][1:4]}}"
+
+   - name: Put the output into a file 
+     template: 
+       src: template.j2 
+       dest: "~/Ansible/learn-ansible/output/{{inventory_hostname}}.txt"
+
