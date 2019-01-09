@@ -3,8 +3,7 @@
 
 - hosts: all
   gather_facts: false
-  remote_user: {{ ansible_user }}
-  
+    
   vars: 
     command_list:
       - show ip interface brief | exc admin | unass 
