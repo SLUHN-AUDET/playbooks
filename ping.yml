@@ -1,10 +1,10 @@
 ---
 - name: Audet Network Test Playbook
   hosts: ios_devices
-    
-  tasks:
-  
-  - name: run show version on remote device
+ 
+ tasks:
+ 
+ - name: run show version on remote device
   ios_command:
     commands: show version
 
