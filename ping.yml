@@ -27,10 +27,10 @@
   - name: ping google
     ios_command:
       commands: ping 8.8.8.8        
-    wait_for:
-      - result[0] contains "!!!"
-    register: result
-    failed_when: "not '!!!' in result.stdout[0]"
+      wait_for:
+        - result[0] contains "!!!"
+      register: result
+      failed_when: "not '!!!' in result.stdout[0]"
     
 
 
