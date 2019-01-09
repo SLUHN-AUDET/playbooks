@@ -2,11 +2,37 @@
 - name: check connectivity to 8.8.8.8
   hosts: ios_devices
     
-  tasks:
-  - name: IOS command
-    ios_command:
-      commands: ping 8.8.8.8        
-      wait_for:
-        - result[0] contains "!!!"
-      register: result
+tasks:
+  - name: run show version on remote device
+  ios_command:
+    commands: show version
+
+  - name: run show version on remote device
+  ios_command:
+    commands: show version
+    wait_for: result[0] contains IOS
+    
+  - name: run multiple commands on remote nodes
+  ios_command:
+    commands:
+      - show version
+      - show interfaces
+
+  - name: run multiple commands and evaluate the output
+  ios_command:
+    commands:
+      - show version
+      - show interfaces
+    wait_for:
+      - result[0] contains IOS
+      - result[1] contains Loopback0
+
+  - name: ping google
+  ios_command:
+    commands: ping 8.8.8.8        
+    wait_for:
+      - result[0] contains "!!!"
+    register: result
       failed_when: "not '!!!' in result.stdout[0]"
+      
+      
