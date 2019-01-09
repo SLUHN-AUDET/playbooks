@@ -30,5 +30,8 @@
     wait_for:
       - result[0] contains "!!!"
     register: result
-    failed_when: "not '!!!' in result.stdout[0]" 
+    failed_when: "not '!!!' in result.stdout[0]"
+    
+
+
       
