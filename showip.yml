@@ -3,6 +3,7 @@
 
 - hosts: all
   gather_facts: false
+  remote_user: TACACS-NET
   
   vars: 
     command_list:
