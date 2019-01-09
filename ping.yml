@@ -6,8 +6,8 @@
   tasks:
 
    - name: run show version on remote device
-   ios_command:
-    commands: show version
+    ios_command:
+      commands: show version
 
    - name: run show version on remote device
    ios_command:
