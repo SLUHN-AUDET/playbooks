@@ -1,6 +1,6 @@
 ---
 - name: Audet Network Test Playbook
-- hosts: ios_devices
+  hosts: ios_devices
   gather_facts: no
  
   tasks:
